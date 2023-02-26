@@ -1,0 +1,1 @@
+function c(t){n[t].classList.toggle("active")}let n=document.getElementsByClassName("popup");let e=document.getElementsByClassName("close-btn");let o=document.getElementsByClassName("btn");for(let t=0;t<e.length;t++){e[t].addEventListener("click",function(){c(t)});o[t].addEventListener("click",function(){c(t)})}

@@ -1,0 +1,75 @@
+
+:root {
+	--Nhexa: 4;
+	--gap: 2.6vw;
+	--size: calc(calc(116vw / var(--Nhexa)) - var(--gap));
+}
+@media only screen and (min-width: 1100px) {:root {--Nhexa: 7;}}
+@media only screen and (max-width: 900px) {
+	:root {--Nhexa: 4;}
+	body {margin-right: calc(var(--size) * .6);width: 100%;}
+}
+@media only screen and (max-width: 600px) {
+	:root {--Nhexa: 2;}
+	body {margin-right: calc(var(--size) * .6);width: 100%;}
+}
+
+hex-section {
+  position: relative;
+  padding-top: 25px;
+  margin: calc(var(--size) * 0.6) auto 0;
+  width: calc(var(--size) * calc(var(--Nhexa) - 0.2));
+  display: grid;
+  grid-template-columns: repeat(var(--Nhexa), 1fr);
+  grid-gap: var(--gap);
+}
+hex-section article {
+  border-top: solid 1px rgb(255, 94, 0);
+  border-bottom: solid 1px rgb(255, 94, 0);
+	background: rgb(255, 255, 255);
+  width: var(--size); 
+  height: calc(var(--size) / 1.1111111);
+	clip-path: url(#hexagono);
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  margin-right: calc(var(--size) / 2);
+	color: rgb(0, 0, 0);
+	overflow: hidden;
+}
+hex-section article:nth-child(2n) {margin: calc(var(--size) * -.5) calc(var(--size) * -.25) 0 calc(var(--size) * -.75);}
+hex-section article::before {
+	content: '';
+	float: left;
+	width: 25%;
+	height: 100%;
+	clip-path: polygon(0% 0%, 100% 0%, 0% 50%, 100% 100%, 0% 100%);
+	shape-outside: polygon(0% 0%, 100% 0%, 0% 50%, 100% 100%, 0% 100%);
+}
+hex-section img {
+  width: var(--size);
+	height: var(--size);
+	position:relative;
+	transform: translate(-50%, -50%);
+	transform-origin: 0% 50%;
+	transition: .75s;
+	clip-path: url(#hexagono);
+	clip-path: inherit;
+	z-index:  20;
+}
+hex-section article:hover img {transform: translate(-50%, -50%) rotate(-110deg);}
+hex-section figure {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	max-width: 50%;
+	height: 100%;
+	line-height: 1;
+	color: rgb(0, 0, 0);
+	transition: .75s .05s;
+  text-align: center;
+}
+hex-section figure h2 {
+  font-style: italic;
+  font-weight: 700;
+	color: rgb(255, 94, 0);
+}

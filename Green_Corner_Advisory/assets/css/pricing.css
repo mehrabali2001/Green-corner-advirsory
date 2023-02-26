@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap');
+
+.pricing {
+	padding: 0px;
+}
+
+.card {
+    height: auto;
+    position: relative;
+    box-shadow: 0px 0px 3px 1px #cccccc47;
+    padding-bottom: 20px;
+}
+
+.h-1 {
+	text-transform: uppercase
+}
+
+.ribon {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	height: 60px;
+	background-color: #1c751d;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+.ribon .fas.fa-spray-can,
+.ribon .fas.fa-broom,
+.ribon .fas.fa-shower,
+.ribon .fas.fa-infinity {
+	font-size: 30px;
+	color: ffffff;
+}
+
+.card .price {
+	color: #1c751d;
+	font-size: 30px
+}
+
+.card ul {
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.pricing .card ul li {
+	width: 100%;
+	font-size: 14px;
+	margin-bottom: 14px;
+	text-align: center;
+}
+
+.pricing .card ul p {
+	width: 100%;
+	font-size: 12px;
+	margin-bottom: 2px;
+}
+
+
+.card:hover {
+	background-color: fef8f5
+}
+
+
+.card .btn {
+	width: 200px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #1c751d;
+	border: none;
+	border-radius: 0px;
+	box-shadow: none
+}
+.pricing button {
+  cursor: pointer;
+  outline: none;
+  color: rgb(2, 2, 2);
+  background-color: #dbdad9;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px #999;
+  width: 170px;
+  height: 35px;
+}
+.pricing button:hover {
+	background-color: #3a9f3b;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 5px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+    /* Modal header */
+	.modal-header {
+		align-items: baseline;
+		padding: 0 10 0 20;
+		display: flex;
+		justify-content: space-between;
+		background-color: #fefefe;
+		margin: auto;
+		border: 1px solid #888;
+		width: 55%;
+		height: auto;
+	  }
+	  
+	  /* The Close Button */
+	  .close {
+		color: #aaaaaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	  }
+	  
+	  .close:hover,
+	  .close:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	  }
+
+  /* Modal Content */
+  .modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 10px;
+	border: 1px solid #888;
+	width: 55%;
+	height: auto;
+  }
+  @media (max-width:600px) {
+	.modal-content {
+		width: 100%
+	}
+	.modal-header {
+		width: 100%
+	}
+
+}
+  .pricing .card ul li .modal-content h6 {
+	font-weight: bolder;
+	text-align: left;
+  } 
+  .pricing .card ul li .modal-content p {
+	font-size: 14px;
+	text-align: left;
+  } 
+  .pricing .card ul li .modal-content li {
+	text-align: left;
+  } 
+
+  .popup .overlay {
+    position: absolute;
+    opacity: 0.1;
+    top: 0;
+    bottom: 0;
+    background: #999;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    visibility: hidden;
+    transition: all 1s ease;
+}
+
+.popup .content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:#fff;
+    width:100%;
+    height: 100%;
+    z-index:2;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+	border-radius: 5px;
+}
+.popup .content img {
+    position:absolute;
+	top:10%;
+    left:0%;
+    width:100%;
+    height: 95%;
+	padding-top: 10px;
+	border-radius: 5px;
+}
+
+.popup .close-btn{
+    cursor:pointer;
+    position:absolute;
+    right: 15px;
+    top:10px;
+    width:30px;
+    height:30px;
+    background: #222;
+    color: #fff;
+    font-size:25px;
+    font-weight:600;
+    line-height:30px;
+    text-align:center;
+    border-radius:50%;
+     
+}
+
+.popup.active .overlay{
+    display:block;
+}
+
+.popup.active .content{
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+}
